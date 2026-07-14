@@ -2,7 +2,7 @@
 # GihoSync 🎵
 
 <p align="center">
-  <img src="screenshots/banner.png" alt="GihoSync Banner" width="100%">
+  <img src="assets/img.png" alt="GihoSync Banner" width="100%">
 </p>
 
 <p align="center">
