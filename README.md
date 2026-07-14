@@ -1,43 +1,125 @@
+````markdown
 # GihoSync 🎵
 
-**GihoSync** is a high-performance, cross-platform mobile music streaming application built with **Flutter**. It bridges the gap between your local media library and streaming services, offering a unified, high-fidelity listening experience.
+<p align="center">
+  <img src="screenshots/banner.png" alt="GihoSync Banner" width="100%">
+</p>
 
-## 📸 Feature Showcase
+<p align="center">
+  <strong>A modern Flutter music player with Local Library, YouTube Streaming, Playlist Management, Background Playback, and Audio Enhancements.</strong>
+</p>
 
-## 🚀 Key Features
-
-* **Unified Player**: A seamless, modern interface for controlling both local and streamed audio.
-* **YouTube Integration**: Built-in support for streaming audio directly from external platforms.
-* **Playlist Management**: Easy organization of your music collection with dedicated folder management.
-* **Local Library**: Effortless scanning and playback of audio files stored on your device.
-* **Background Audio**: Optimized for uninterrupted playback using advanced background service configuration.
-* **Audio Enhancement**: Integrated equalizer settings to fine-tune your audio output.
-
-## 🛠 Tech Stack
-
-* **Framework**: [Flutter](https://flutter.dev/) (Dart)
-* **Audio Engine**: `just_audio` with `audio_service` for background task management.
-* **Media Querying**: `on_audio_query` for local storage indexing.
-* **State Management**: [Riverpod/Provider/Bloc]
-* **Local Storage**: Hive/SQLite (for caching and playlist data).
-
-## 🏗 Setup & Installation
-
-### Prerequisites
-
-* Flutter SDK (Latest Stable)
-* Dart SDK
-* An IDE (VS Code or Android Studio)
-
-
-## 🤝 Contributing
-
-Contributions are what make the open-source community thrive. If you have a feature request or bug report, feel free to open an **Issue** or submit a **Pull Request**.
-
-## 📧 Contact
-
-**Gohul** - (https://github.com/gohul2056-star)
+<p align="center">
+  <a href="https://github.com/gohul2056-star/GihoSync/releases/latest">
+    <img src="https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Download APK">
+  </a>
+</p>
 
 ---
 
+# 📸 Screenshots
 
+<p align="center">
+  <img src="screenshots/home.png" width="220" alt="Home">
+  <img src="screenshots/library.png" width="220" alt="Library">
+  <img src="screenshots/player.png" width="220" alt="Player">
+</p>
+
+<p align="center">
+  <img src="screenshots/playlist.png" width="220" alt="Playlist">
+  <img src="screenshots/youtube.png" width="220" alt="YouTube">
+  <img src="screenshots/equalizer.png" width="220" alt="Equalizer">
+</p>
+
+---
+
+# ✨ Features
+
+- 🎵 Modern music player UI
+- 📂 Local music library scanning
+- ▶️ YouTube audio streaming
+- ❤️ Favorites support
+- 📑 Playlist creation and management
+- 📁 Playlist folders
+- 🎚 Built-in Equalizer
+- 🔊 Background playback
+- 🔁 Queue management
+- 🎧 High-quality audio playback
+- ⚡ Fast search
+- 🌙 Material 3 UI
+- 📱 Responsive design
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Description |
+|------------|-------------|
+| Flutter | Cross-platform framework |
+| Dart | Programming language |
+| just_audio | Audio playback |
+| audio_service | Background playback |
+| on_audio_query | Local music scanning |
+| Hive / SQLite | Local storage |
+| Riverpod / Provider / Bloc | State management |
+
+---
+
+# 🚀 Getting Started
+
+### Prerequisites
+
+- Flutter SDK (Latest Stable)
+- Dart SDK
+- Android Studio or VS Code
+
+### Installation
+
+```bash
+git clone https://github.com/gohul2056-star/GihoSync.git
+
+cd GihoSync
+
+flutter pub get
+
+flutter run
+````
+
+---
+
+# 📥 Download
+
+Download the latest Android APK from GitHub Releases.
+
+<p align="center">
+  <a href="https://github.com/gohul2056-star/GihoSync/releases/latest">
+    <img src="https://img.shields.io/badge/Download-APK-success?style=for-the-badge&logo=android&logoColor=white">
+  </a>
+</p>
+
+---
+
+# 🤝 Contributing
+
+Contributions are always welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
+
+---
+
+# 📧 Contact
+
+**Gohul**
+
+GitHub: https://github.com/gohul2056-star
+
+---
+
+<p align="center">
+Made with ❤️ using Flutter
+</p>
+```
