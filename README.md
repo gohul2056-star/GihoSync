@@ -20,7 +20,7 @@
 # 📸 Screenshots
 
 <p align="center">
-  <img src="screenshots/home.png" width="220" alt="Home">
+  <img src="screenshots/home.jpeg" width="220" alt="Home">
   <img src="screenshots/library.png" width="220" alt="Library">
   <img src="screenshots/player.png" width="220" alt="Player">
 </p>
