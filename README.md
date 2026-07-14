@@ -1,5 +1,5 @@
-<img width="461" height="587" alt="equlizer" src="https://github.com/user-attachments/assets/a443f330-2daa-4f91-a32d-caa876f6863b" />
-<img width="461" height="587" alt="home" src="https://github.com/user-attachments/assets/c5c8118d-b7b1-4a88-aed0-4b1f4a25f0a7" /> <img width="2752" height="1536" alt="banner" src="https://github.com/user-attachments/assets/56bf89c6-0bda-428c-8dd2-479116a09bc3" />
+<img width="470" height="587" alt="equlizer" src="https://github.com/user-attachments/assets/a443f330-2daa-4f91-a32d-caa876f6863b" />
+<img width="470" height="587" alt="home" src="https://github.com/user-attachments/assets/c5c8118d-b7b1-4a88-aed0-4b1f4a25f0a7" /> <img width="2752" height="1536" alt="banner" src="https://github.com/user-attachments/assets/56bf89c6-0bda-428c-8dd2-479116a09bc3" />
 ````markdown
 # GihoSync 🎵
 
