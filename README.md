@@ -1,11 +1,8 @@
-
-
+<img width="461" height="587" alt="home" src="https://github.com/user-attachments/assets/c5c8118d-b7b1-4a88-aed0-4b1f4a25f0a7" /> <img width="2752" height="1536" alt="banner" src="https://github.com/user-attachments/assets/56bf89c6-0bda-428c-8dd2-479116a09bc3" />
 ````markdown
 # GihoSync 🎵
 
-<p align="center">
-<img width="461" height="587" alt="home" src="https://github.com/user-attachments/assets/c5c8118d-b7b1-4a88-aed0-4b1f4a25f0a7" />
-</p>
+
 
 <p align="center">
   <strong>A modern Flutter music player with Local Library, YouTube Streaming, Playlist Management, Background Playback, and Audio Enhancements.</strong>
