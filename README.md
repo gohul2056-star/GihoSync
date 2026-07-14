@@ -1,3 +1,5 @@
+<img width="461" height="587" alt="home" src="https://github.com/user-attachments/assets/c5c8118d-b7b1-4a88-aed0-4b1f4a25f0a7" />
+
 ````markdown
 # GihoSync 🎵
 
@@ -19,18 +21,7 @@
 
 # 📸 Screenshots
 
-<p align="center">
-  <img src="screenshots/home.jpeg" width="220" alt="Home">
-  <img src="screenshots/library.png" width="220" alt="Library">
-  <img src="screenshots/player.png" width="220" alt="Player">
-</p>
-
-<p align="center">
-  <img src="screenshots/playlist.png" width="220" alt="Playlist">
-  <img src="screenshots/youtube.png" width="220" alt="YouTube">
-  <img src="screenshots/equalizer.png" width="220" alt="Equalizer">
-</p>
-
+<img width="2752" height="1536" alt="banner" src="https://github.com/user-attachments/assets/56bf89c6-0bda-428c-8dd2-479116a09bc3" />
 ---
 
 # ✨ Features
