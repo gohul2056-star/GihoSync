@@ -2,7 +2,7 @@
 # GihoSync 🎵
 
 <p align="center">
-  <img src="https://github.com/gohul2056-star/GihoSync/blob/main/screenshots/banner.png" width="220">
+  <img src="https://github.com/gohul2056-star/GihoSync/blob/main/screenshots/banner.png](https://raw.githubusercontent.com/gohul2056-star/GihoSync/main/screenshots/banner.png" width="220">
 </p>
 
 <p align="center">
