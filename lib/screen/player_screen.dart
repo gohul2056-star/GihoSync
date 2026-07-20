@@ -557,7 +557,7 @@ class _PlayerScreenState extends State<PlayerScreen> with TickerProviderStateMix
           builder: (context, snapshot) {
             final loopMode = snapshot.data ?? LoopMode.off;
             final isActive = loopMode != LoopMode.off;
-            final icon = loopMode == LoopMode.one ? Icons.repeat_one_rounded : Icons.repeat_rounded;
+            final icon = loopMode == LoopMode.one ? Icons.repeat_rounded : Icons.repeat_one_rounded;
 
             return GestureDetector(
               onTap: audioController.toggleLoop,

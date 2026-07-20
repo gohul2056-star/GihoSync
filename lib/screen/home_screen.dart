@@ -1,4 +1,7 @@
 import 'dart:ui';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:gihosync/constants/app_Colors.dart';
 import 'package:gihosync/controller/audio_controller.dart';
@@ -23,8 +26,32 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   bool hasPermission = false;
   String query = "";
   bool isLoading = false;
+  List<String> _suggestions = [];
+  Timer? _debounce;
   late AnimationController _bgController;
   late Animation<double> _bgAnim;
+
+  Future<void> _fetchSuggestions(String q) async {
+    if (q.trim().isEmpty) {
+      if (mounted) setState(() => _suggestions = []);
+      return;
+    }
+    try {
+      final res = await http.get(Uri.parse('http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q=$q'));
+      if (res.statusCode == 200) {
+        final List<dynamic> data = jsonDecode(res.body);
+        if (data.length > 1 && data[1] is List) {
+          if (mounted) {
+            setState(() {
+              _suggestions = List<String>.from(data[1]);
+            });
+          }
+        }
+      }
+    } catch (e) {
+      debugPrint('Suggestions error: $e');
+    }
+  }
 
   Future<void> checkPermissionAndRequest() async {
     final permission = await Permission.audio.status;
@@ -52,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   @override
   void dispose() {
+    _debounce?.cancel();
     _searchController.dispose();
     _bgController.dispose();
     super.dispose();
@@ -191,6 +219,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                     setState(() {
                       query = "";
                       isLoading = false;
+                      _suggestions = [];
                     });
                     audioController.loadLocalSongs();
                   }),
@@ -234,16 +263,27 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   ),
                   onChanged: (value) {
                     setState(() => query = value);
+                    if (value.trim().isEmpty) {
+                      setState(() => _suggestions = []);
+                    }
                     if (value.isEmpty &&
                         audioController.songs.value.isNotEmpty &&
                         audioController.songs.value.first.source != SongSource.youtube) {
                       audioController.loadLocalSongs();
+                    } else if (value.trim().isNotEmpty) {
+                      if (_debounce?.isActive ?? false) _debounce!.cancel();
+                      _debounce = Timer(const Duration(milliseconds: 300), () {
+                        _fetchSuggestions(value);
+                      });
                     }
                   },
                   onSubmitted: (value) async {
                     if (value.trim().isNotEmpty) {
                       FocusManager.instance.primaryFocus?.unfocus();
-                      setState(() => isLoading = true);
+                      setState(() {
+                        isLoading = true;
+                        _suggestions = [];
+                      });
                       await audioController.searchYouTube(value);
                       setState(() => isLoading = false);
                     }
@@ -252,6 +292,36 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               ),
             ),
           ),
+          if (_suggestions.isNotEmpty && MediaQuery.of(context).viewInsets.bottom > 0)
+            Container(
+              margin: const EdgeInsets.only(top: 8),
+              decoration: BoxDecoration(
+                color: const Color(0xFF1A1A2E).withValues(alpha: 0.95),
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.1)),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Column(
+                  children: _suggestions.take(5).map((s) => ListTile(
+                    leading: Icon(Icons.search, color: Colors.white.withValues(alpha: 0.5), size: 20),
+                    title: Text(s, style: const TextStyle(color: Colors.white70, fontSize: 14)),
+                    dense: true,
+                    onTap: () async {
+                      _searchController.text = s;
+                      FocusManager.instance.primaryFocus?.unfocus();
+                      setState(() {
+                        query = s;
+                        isLoading = true;
+                        _suggestions = [];
+                      });
+                      await audioController.searchYouTube(s);
+                      setState(() => isLoading = false);
+                    },
+                  )).toList(),
+                ),
+              ),
+            ),
           const SizedBox(height: 12),
         ],
       ),
